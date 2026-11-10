@@ -1,0 +1,234 @@
+:root {
+  --color-primary:          #00A37F;
+  --color-primary-dark:     #004e3c;
+  --color-primary-light:    #1ABF96;
+  --color-primary-mid:      #0d6451;
+  --color-accent:           #df7c5e;
+  --color-bg:               #0b2720;
+  --color-surface:          #12251F;
+  --color-surface-elevated: #1A332B;
+  --color-text:             #d9ebe5;
+  --color-text-muted:       #8BA89E;
+  --color-border:           #2A433B;
+  --input-focus-h: 167;
+  --input-focus-s: 100%;
+  --input-focus-l: 32%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: blackbird; /* set name */
+  src: url(/projekt-blackbird.otf); /* url of the font */
+}
+
+body{
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+    display:flex;
+    flex-direction: column;
+        align-items:center;
+}
+
+::selection{
+    background-color: var(--color-primary-mid);
+    color: var(--color-text);
+}
+
+.card{
+    background-color: var(--color-primary);
+    outline: 1px dashed var(--color-primary-mid);
+    border: 1px solid var(--color-primary-dark);
+    outline-offset:3px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding:20px;
+    max-width:800px;
+    width:100%;
+}
+
+
+.title{
+    color: var(--color-primary-dark);
+    font-size:2.5em;
+    display: block;
+    font-style: italic;
+    font-family: blackbird;
+}
+
+.badge{
+    padding:4px;
+    padding-inline:10px;
+    background-color: var(--color-primary-light);
+    border-radius:30px;
+    display:inline;
+    font-size:0.9em;
+}
+
+.badge.nft {
+    background-color: var(--color-accent);
+}
+
+input {
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.5em;
+  margin-bottom:15px;
+  background-color: var(--color-primary-dark);
+  border: 1px solid var(--color-primary);
+  border-radius: 10px;
+  max-width:800px;
+  width:100%;
+  text-align:center;
+  color:var(--color-text);
+    transition: 180ms box-shadow ease-in-out;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px hsla(var(--input-focus-h), var(--input-focus-s), calc(var(--input-focus-l) +
+          40%), 0.3);
+  outline: none;
+}
+
+input::placeholder{
+      color:var(--color-text);
+        transition: opacity 110ms ease;
+  opacity: 1;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
+
+#search-input{
+font-family: Segoe UI, 'cappuccicons';
+}
+
+
+section#tooltip p {
+  margin: 20px 0;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltip-text {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  visibility: hidden;
+  max-width: 100px;
+  background-color: var(--color-primary-mid);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 7px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -26px;
+  opacity: 0;
+  transition: .3s;
+  transform: translate3d(0px, 20px, 0px);
+}
+
+
+.badge.nft.tooltip .tooltip-text,
+.nft.tooltip .tooltip-text {
+  max-width: none;
+  width: max-content;
+    margin-left: -37px;
+      bottom: 125%;
+  left: 50%;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-primary-mid) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.comfort{
+    position: fixed;
+bottom:10px;
+left:10px;
+  color: var(--color-primary);
+  font-size:1.2em;
+    z-index: 99999;
+}
+
+.comfort .tooltip-text{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:0.6em;
+  left:35%;
+  margin-left:15px;
+    position: absolute;
+    max-width:300px;
+      max-width: none;
+  width: max-content;
+}
+
+.comfort .tooltip-text::after {
+  display:none;
+}
+
+#buttons{
+  display:flex;
+  justify-content: center;
+  column-gap:13px;
+}
+
+.button{
+  width:55px;
+  background-color: var(--color-primary-mid);
+  border-radius:10px;
+  text-align:center;
+  font-family: Segoe UI, 'cappuccicons';
+      outline: 1px solid var(--color-primary-mid);
+    outline-offset:1px;
+    font-size:1.5em;
+    transition: background 200ms ease-in-out;
+}
+
+.button a{
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.button:hover{
+  background-color:var(--color-primary-dark);
+}
+
+.button .tooltip-text{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:0.6em;
+  margin-bottom:3px;
+  left:55%;
+}
+
+button{
+    all: unset;
+  cursor: pointer;
+  outline: revert;
+}
