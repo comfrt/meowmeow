@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: blackbird; 
-  src: url(projekt-blackbird.otf); 
+  src: url('projekt-blackbird.otf'); 
 }
 
 body{
