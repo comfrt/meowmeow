@@ -22,8 +22,8 @@
 }
 
 @font-face {
-  font-family: blackbird; /* set name */
-  src: url(/projekt-blackbird.otf); /* url of the font */
+  font-family: blackbird; 
+  src: url(projekt-blackbird.otf); 
 }
 
 body{
